@@ -24,17 +24,21 @@ class HomePage extends Component {
                 <td>
                   < div class="polaroid">
                       <Link to="/beforethewar">
+                      <div class="frame">
                           <img src={require('./Pics/1.0-Home/Before.jpg')}alt="Before the War" />
+                      </div>
                       </Link>
                       <div class="container">
-                        <p style={{textAlign: 'center', fontWeight:'bold'}}>Before the War</p>
+                        <p style={{textAlign: 'center', fontWeight:'bold'}}>Before the Holocaust</p>
                       </div>
                   </div>
                 </td>
                 <td>
                 < div class="polaroid">
                     <Link to="/peter">
+                    <div class="frame">
                         <img src={require('./Pics/1.0-Home/Peter.jpg')} alt=" The Peter Lederman Story" />
+                    </div>
                     </Link>
                     <div class="container">
                       <p style={{textAlign: 'center', fontWeight:'bold'}}>The Peter Lederman Story</p>
@@ -44,7 +48,9 @@ class HomePage extends Component {
                 <td>
                   < div class="polaroid">
                     <Link to="/bea">
+                    <div class="frame">
                         <img src={require('./Pics/1.0-Home/Bea.jpg')} alt="The Bea Muhlfelder Story" />
+                    </div>
                     </Link>
                     <div class="container">
                       <p style={{textAlign: 'center', fontWeight:'bold'}}>The Bea Muhlfelder Story</p>
@@ -54,7 +60,9 @@ class HomePage extends Component {
                 <td>
                   < div class="polaroid">
                     <Link to="/timeline">
+                    <div class="frame">
                         <img src={require('./Pics/1.0-Home/Timeline.jpg')} alt="Timeline" />
+                    </div>
                     </Link>
                     <div class="container">
                       <p style={{textAlign: 'center', fontWeight:'bold'}}>Timeline</p>

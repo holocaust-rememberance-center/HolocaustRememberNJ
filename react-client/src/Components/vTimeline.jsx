@@ -32,6 +32,7 @@ class VTimeline extends Component {
               <a href='#1943'> 1943 </a>
               <a href='#1944'> 1944 </a>
               <a href='#1945'> 1945 </a> */}
+                <div onClick={goToTop} style={{cursor: 'pointer'}}><img class="toparrow" src={require('./Pics/top.png')}  alt="top" /></div>
               <Anchor id={'1933'}>
                     <Timeline
                     activeColor='#555555'
@@ -621,7 +622,7 @@ class VTimeline extends Component {
                     US President Harry S Truman issues a directive giving preference to displaced persons for immigrant visas under existing US immigration quota restrictions.
                     </div>
                     </Timeline>
-                    {/*<div onClick={goToTop} style={{cursor: 'pointer',width:30,height:100,position: 'relative',left:175,top:225}}id="top"><img src={require('./Pics/top.png')} class="top" alt="top" /></div>*/}
+
           </div>
        </StyleRoot>
     )
