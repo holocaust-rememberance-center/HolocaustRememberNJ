@@ -12,7 +12,7 @@ import img2 from './Pics/5.0-Stories/Bea Muhlfelder/5.0.4-Bea-Muhlfelder.jpg';
 class Bea extends Component {
   render() {
     return (
-      <div style={pStyle} >
+      <div class="positioning" style={pStyle} >
       <h1> Bea Muhlfelder Story</h1>
       <p>Bea Muhlfelder was born in Konstanz, a small town on the border between Switzerland and Germany. Bea’s father served as a cantor at the synagogue, across the street from her house. When the temple’s rabbi left for Israel, Bea’s father assumed the rabbi’s responsibilities.
 </p>

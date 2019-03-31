@@ -9,7 +9,7 @@ class NavBar extends Component {
     return (
       <div>
           <div class="titleheader">
-          <img src={img} />
+          <img class="headerbanner" src={img} />
           </div><div class="topnav" >
             <Menu customBurgerIcon={ <img src={img1} />} >
               <a id="Home" className="menu-item" ><Link to="/">Home</Link></a>

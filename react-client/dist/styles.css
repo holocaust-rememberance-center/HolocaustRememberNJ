@@ -2,7 +2,7 @@ les below. You can always change them depending on how you want to style your we
 //basestyle.js has the menu control feature
 * {
   box-sizing: border-box;
-
+  position:absolute;
 }
 body{
   background-color: #545454;
@@ -31,6 +31,10 @@ body{
   font-weight: bold;
   text-align: left;
   background-color:#fff;
+  max-width:1440px;
+  max-height: 30px;
+  cursor: pointer;
+
 }
 
 .topnav div{
@@ -61,9 +65,23 @@ body{
 .titleheader{
     position: relative;
     padding:0%;
-    max-width: 100%;
     height: auto;
+    max-width: 1440px;
 
+}
+.banner{
+  position: relative;
+  padding:0%;
+  max-width: 1440px;
+  height: auto;
+  z-index: 1;
+}
+.headerbanner{
+  position: relative;
+  padding:0%;
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
 }
 .collage{
   position: relative;
@@ -73,17 +91,15 @@ body{
   height: auto;
 
 }
-.toparrow{
-  position: fixed;
-  top:850;
-  left: 250;
+.positioning{
+  max-width: inherit;
+  max-height: inherit;
 }
-
 
 header {
   display: block;
   background-color: black;
-  width: 100%;
+  width: 1440px;
   height: 50px;
   color: white;
 }
@@ -94,9 +110,10 @@ header {
 
 footer {
   display: block;
-  height: 50px;
+  height: 100px;
   background-color: transparent;
   color: white;
+  overflow: hidden;
 }
 
 ul{
@@ -116,13 +133,23 @@ img{
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: relative;
-  width: 36px;
-  height: 30px;
-  left: 30px;
-  bottom: 75px;
-
-
+  position: absolute;
+  max-width: 36px;
+  max-height: 30px;
+  left: calc(100vw/2 - 47%);
+  top: 35px;
+}
+@media screen and (min-width: 1440px){
+  .bm-burger-button {
+  position: absolute;
+  max-width: 36px;
+  max-height: 30px;
+  left: calc(100vw/2 - (47/100) * 1440px);
+  }
+}
+.arrowtop{
+  position:fixed;
+  bottom: 50px;
 }
 
 /* Color/shape of burger icon bars */
@@ -142,7 +169,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 */
 .bm-menu-wrap {
   position: absolute;
-  height: 100%;
+  max-height: 100%;
 }
 
 /* General sidebar styles */
@@ -192,13 +219,24 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .head {
   text-align: left;
 }
+.menu_link{
+  margin:auto;
+    max-width:inherit;
+    overflow: auto;
+}
 .front_menu{
   margin:auto;
+  max-width:inherit;
+  justify-content: center;
+
 
 }
 .front_menu td{
   padding:20px;
+    max-width:100%;
+
 }
+
 div.polaroid {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

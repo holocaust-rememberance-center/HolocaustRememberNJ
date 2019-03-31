@@ -9,7 +9,7 @@ const pStyle = {
 class BeforetheWar extends Component {
   render() {
     return (
-      <div style={pStyle} >
+      <div class="positioning" style={pStyle} >
       <h1> Before the War</h1>
       <h2>Life and Loss in Germany: The 80th Anniversary of Kristallnacht</h2>
 

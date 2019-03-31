@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { StyleRoot } from 'radium';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Timeline from 'react-dual-timeline';
-import Anchor, {goToTop} from 'react-scrollable-anchor';
+import ScrollMenu from 'react-horizontal-scrolling-menu';
+import './menu.css';
 const pStyle = {
   textAlign: 'justify',
   textAlign: 'justify',
@@ -10,15 +12,86 @@ const pStyle = {
   paddingBottom:20,
   paddingTop:20
 };
+const sty = {
+  overflow:'auto'
+};
+// list of items
+const list = [
+  { name: '1933' },
+  { name: '1934' },
+  { name: '1935' },
+  { name: '1936' },
+  { name: '1937' },
+  { name: '1938' },
+  { name: '1939' },
+  { name: '1940' },
+  { name: '1941' },
+  { name: '1942' },
+  { name: '1943' },
+  { name: '1944' },
+  { name: '1945' }
+];
 
+// One item component
+// selected prop will be passed
+const MenuItem = ({text, selected}) => {
+  return <div
+    className={`scroll ${selected ? 'active' : ''}`}
+    >{text}</div>;
+};
+
+// All items component
+// Important! add unique key
+export const Menu = (list, selected) =>
+  list.map(el => {
+    const {name} = el;
+
+    return <MenuItem text={name} key={name} selected={selected} />;
+  });
+
+
+const Arrow = ({ text, className }) => {
+  return (
+    <div
+      className={className}
+    >{text}</div>
+  );
+};
+
+
+const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
+const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+
+const selected = '1933';
 class VTimeline extends Component {
+
+  constructor(props) {
+        super(props);
+        // call it again if items count changes
+        this.menuItems = Menu(list, selected);
+        this.state = { selected  };
+
+        this.onSelect = key => {
+          console.log(key);
+          document.getElementById(key).scrollIntoView(true);
+        this.setState({ selected: key });
+        }
+      }
+      goTotop(){
+        document.getElementById("top").scrollIntoView(true);
+      }
   render() {
-    goToTop()
+    const { selected } = this.state;
+     // Create menu from items
+   const menu = this.menuItems;
+
+
+
     return (
 
       <StyleRoot>
-          <div style={pStyle}>
-            <h1>Timeline</h1>
+          <div class="positioning" style={pStyle}>
+            <h1 id="top">Timeline</h1>
               {/*<a href='#1933'> 1933 </a>
               <a href='#1934'> 1934 </a>
               <a href='#1935'> 1935 </a>
@@ -32,8 +105,14 @@ class VTimeline extends Component {
               <a href='#1943'> 1943 </a>
               <a href='#1944'> 1944 </a>
               <a href='#1945'> 1945 </a> */}
-                <div onClick={goToTop} style={{cursor: 'pointer'}}><img class="toparrow" src={require('./Pics/top.png')}  alt="top" /></div>
-              <Anchor id={'1933'}>
+            <ScrollMenu
+                    data={menu}
+                    arrowLeft={ArrowLeft}
+                    arrowRight={ArrowRight}
+                    selected={selected}
+                    onSelect={this.onSelect}
+            />
+            <img class="arrowtop" src={require('./Pics/top.png')} alt="top" onClick={this.goTotop}/>
                     <Timeline
                     activeColor='#555555'
                     color='#FFF'
@@ -41,9 +120,9 @@ class VTimeline extends Component {
                     lineWidth="7"
                     circleWidth="80"
                     >
-                      <div icon="1933"></div>
+                      <div id="1933" icon="1933"></div>
                     </Timeline>
-             </Anchor>
+
 
              <Timeline
               activeColor='#555555'
@@ -52,26 +131,26 @@ class VTimeline extends Component {
               lineWidth="7"
               addEvenPropToChildren= 'true'
               >
-                    <div>
-                      <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')} width="350" height="175"/>
+                    <div style={sty}>
+                      <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')} width="350" height="175"/>
                       Adolf Hitler Appointed Chancellor
                       <h4>January 30, 1933</h4>
                       The Nazi Party assumes control of the German state.
                     </div>
                     <div>
-                      <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')} width="350" height="175"/>
+                      <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')} width="350" height="175"/>
                       Reichstag Fire Decree
                       <h4>FEBRUARY 28, 1933</h4>
                       President Hindenburg suspends constitutional protections in Germany.
                     </div>
                     <div>
-                    <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')} width="350" height="175"/>
+                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')} width="350" height="175"/>
                     Establishment of Dachau Camp
                     <h4>MARCH 22, 1933</h4>
                     The SS establishes the Dachau concentration camp in March 1933.
                     </div>
                     <div>
-                    <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.4.jpg')} width="350" height="175"/>
+                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.4.jpg')} width="350" height="175"/>
                     Anti-Jewish Boycott
                     <h4>APRIL 1, 1933</h4>
                     Members of the Nazi Party and its affiliated organizations organize a nationwide boycott of Jewish-owned businesses in Germany.
@@ -83,14 +162,14 @@ class VTimeline extends Component {
                     </div>
 
                     <div>
-                    <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.5.png')} width="350" height="175"/>
+                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.5.png')} width="350" height="175"/>
                     Law Limits Jews in Public Schools
                     <h4>APRIL 25, 1933</h4>
                     The Law against Overcrowding in Schools and Universities limits the number of Jewish students in public schools.
                     </div>
 
                     <div>
-                    <img src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.6.png')} width="350" height="175"/>
+                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.6.png')} width="350" height="175"/>
                     Book Burning
                     <h4>MAY 10, 1933</h4>
                     Books deemed "un-German" are publicly burned throughout Germany.
@@ -109,7 +188,6 @@ class VTimeline extends Component {
                     December 1: Hitler declares legal unity of the German State and Nazi Party
                     </div>
               </Timeline>
-              <Anchor id={'1934'}>
                     <Timeline
                     activeColor='#555555'
                     color='#FFF'
@@ -117,9 +195,9 @@ class VTimeline extends Component {
                     lineWidth="7"
                     circleWidth="80"
                     >
-                      <div icon="1934"></div>
+                      <div id="1934" icon="1934"></div>
                     </Timeline>
-              </Anchor>
+
               <Timeline
                activeColor='#555555'
                color='#FFF'
@@ -144,7 +222,6 @@ class VTimeline extends Component {
                     Hitler becomes the absolute dictator of Germany.
                     </div>
                     </Timeline>
-                    <Anchor id={'1935'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -152,25 +229,21 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1935"></div>
+                            <div id="1935" icon="1935"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
                      lineColor='#000'
                      lineWidth="7"
-                     addEvenPropToChildren= 'true'
-                     >
+                     addEvenPropToChildren= 'true'>
                     <div>
                     Nuremberg Race Laws
                     <h4>SEPTEMBER 15, 1935</h4>
                     The Nuremberg Laws of 1935 herald a new wave of antisemitic legislation that brings immediate and concrete segregation.
-
                     </div>
                     </Timeline>
-                    <Anchor id={'1936'}>
-
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -178,9 +251,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1936"></div>
+                            <div id="1936" icon="1936"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -189,14 +262,13 @@ class VTimeline extends Component {
                      addEvenPropToChildren= 'true'
                      >
                     <div>
-                    Olympic Games Open in Berlin
+                    Olympic Games Open in Berin
                     <h4>AUGUST 1, 1936</h4>
                     The Nazi dictatorship camouflages its racist, militaristic character while hosting the Summer Olympics.
                     October 25: Hitler and Mussolini form Rome-Berlin Axis
                     November 25: Germany and Japan sign military pact
                     </div>
                     </Timeline>
-                    <Anchor id={'1937'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -204,9 +276,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1937"></div>
+                            <div id="1937" icon="1937"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -226,7 +298,6 @@ class VTimeline extends Component {
                     Josef Goebbels and Julius Streicher open the antisemitic exhibition Der Ewige Jude (The Eternal Jew) at the library of the German Museum in Munich, Germany.
                     </div>
                     </Timeline>
-                    <Anchor id={'1938'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -234,9 +305,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1938"></div>
+                            <div id="1938" icon="1938"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -280,7 +351,6 @@ class VTimeline extends Component {
                     In desperation, Jewish parents send their unaccompanied children abroad to escape Nazi persecution.
                     </div>
                     </Timeline>
-                    <Anchor id={'1939'}>
                         <Timeline
                         activeColor='#555555'
                         color='#FFF'
@@ -288,9 +358,9 @@ class VTimeline extends Component {
                         lineWidth="7"
                         circleWidth="80"
                         >
-                          <div icon="1939"></div>
+                          <div id="1939" icon="1939"></div>
                         </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -316,7 +386,6 @@ class VTimeline extends Component {
                     Great Britain and France declare war on Germany.
                     </div>
                     </Timeline>
-                    <Anchor id={'1940'}>
                         <Timeline
                         activeColor='#555555'
                         color='#FFF'
@@ -324,9 +393,9 @@ class VTimeline extends Component {
                         lineWidth="7"
                         circleWidth="80"
                         >
-                          <div icon="1940"></div>
+                          <div id="1940" icon="1940"></div>
                         </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -346,7 +415,6 @@ class VTimeline extends Component {
                     The ghetto was enclosed by a wall that was over ten feet high, topped with barbed wire.
                     </div>
                     </Timeline>
-                    <Anchor id={'1941'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -354,9 +422,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1941"></div>
+                            <div id="1941" icon="1941"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -419,7 +487,6 @@ class VTimeline extends Component {
                     Chelmo was first stationary facility where poison gas was used for mass murder.
                     </div>
                     </Timeline>
-                    <Anchor id={'1942'}>
                         <Timeline
                         activeColor='#555555'
                         color='#FFF'
@@ -427,9 +494,9 @@ class VTimeline extends Component {
                         lineWidth="7"
                         circleWidth="80"
                         >
-                          <div icon="1942"></div>
+                          <div id="1942" icon="1942"></div>
                         </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -467,7 +534,6 @@ class VTimeline extends Component {
                     SS Special Detachment Treblinka begins gassing operations at the Treblinka killing center.
                     </div>
                     </Timeline>
-                    <Anchor id={'1943'}>
                             <Timeline
                             activeColor='#555555'
                             color='#FFF'
@@ -475,9 +541,9 @@ class VTimeline extends Component {
                             lineWidth="7"
                             circleWidth="80"
                             >
-                              <div icon="1943"></div>
+                              <div id="1943" icon="1943"></div>
                             </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -503,7 +569,6 @@ class VTimeline extends Component {
                     SS forces kill surviving Jews in work camps near Lublin, Poland.
                     </div>
                     </Timeline>
-                    <Anchor id={'1944'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -511,9 +576,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1944"></div>
+                            <div id="1944" icon="1944"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -557,7 +622,6 @@ class VTimeline extends Component {
                     Prisoners assigned to Crematorium IV at the Auschwitz-Birkenau killing center rebelled after learning that they were going to be killed.
                     </div>
                     </Timeline>
-                    <Anchor id={'1945'}>
                           <Timeline
                           activeColor='#555555'
                           color='#FFF'
@@ -565,9 +629,9 @@ class VTimeline extends Component {
                           lineWidth="7"
                           circleWidth="80"
                           >
-                            <div icon="1945"></div>
+                            <div id="1945" icon="1945"></div>
                           </Timeline>
-                    </Anchor>
+
                     <Timeline
                      activeColor='#555555'
                      color='#FFF'
@@ -623,7 +687,7 @@ class VTimeline extends Component {
                     </div>
                     </Timeline>
 
-          </div>
+      </div>
        </StyleRoot>
     )
   }
