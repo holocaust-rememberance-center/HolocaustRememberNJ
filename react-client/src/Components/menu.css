@@ -1,37 +1,51 @@
-.scroll {
-  background-color: #f1f1f1;
-  opacity: 1;
-  filter: alpha(opacity=25);
-  padding: 0 40px;
-  margin: 5px 10px;
-  user-select: none;
-  cursor: pointer;
-  line-height: 1.8;
-  font-size: 20px;
-  font-family: "Arial", Times, san-serif;
-  font-weight: bold;
-  border: 3px solid black;
-  border-radius: 10%;
-}
-.scroll-wrapper.active {
-  border: 3px solid blue;
-  border-radius: 10%;
-}
-.scroll.active {
-  border: 1px green solid;
-}
+  .scroll {
+    background-color: #f1f1f1;
+    opacity: 1;
+    filter: alpha(opacity=25);
+    padding: 0 40px;
+    margin: 5px 10px;
+    user-select: none;
+    cursor: pointer;
+    line-height: 1.8;
+    font-size: 20px;
+    font-family: "Arial", Times, san-serif;
+    font-weight: bold;
+    border: 3px solid black;
+    border-radius: 10%;
+  }
+  .scroll-wrapper.active {
+    border: 3px solid blue;
+    border-radius: 10%;
+  }
+  .scroll.active {
+    border: 1px green solid;
+  }
 
-.scroll-menu-arrow {
-  background-color: #f1f1f1;
-  opacity: 1;
-  filter: alpha(opacity=25);
-  font-weight: bold;
-  font-size: 15px;
-  padding-left:9px;
-  padding-right: 9px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-  border: 3px solid black;
-  border-radius: 50%;
-}
+  .scroll-menu-arrow {
+    background-color: #f1f1f1;
+    opacity: 1;
+    filter: alpha(opacity=25);
+    font-weight: bold;
+    font-size: 15px;
+    padding-left:9px;
+    padding-right: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+  .positioning{
+    max-width: inherit;
+    max-height: inherit;
+  }
+  .anchormenu{
+    margin: auto;
+    max-width: calc(100vw/2);
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    z-index: 100;
+    top:0px;
+padding-bottom: 10px;
+
+  }

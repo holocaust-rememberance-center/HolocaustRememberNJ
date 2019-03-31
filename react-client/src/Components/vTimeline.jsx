@@ -72,14 +72,14 @@ class VTimeline extends Component {
         this.state = { selected  };
 
         this.onSelect = key => {
-          console.log(key);
-          document.getElementById(key).scrollIntoView(true);
+                    document.getElementById(key).scrollIntoView(true);
         this.setState({ selected: key });
         }
       }
       goTotop(){
         document.getElementById("top").scrollIntoView(true);
       }
+
   render() {
     const { selected } = this.state;
      // Create menu from items
@@ -105,13 +105,17 @@ class VTimeline extends Component {
               <a href='#1943'> 1943 </a>
               <a href='#1944'> 1944 </a>
               <a href='#1945'> 1945 </a> */}
+              <table class="anchormenu">
+              <td class="anchormenu">
             <ScrollMenu
                     data={menu}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}
                     selected={selected}
                     onSelect={this.onSelect}
-            />
+                  />
+                  </td>
+            </table>
             <img class="arrowtop" src={require('./Pics/top.png')} alt="top" onClick={this.goTotop}/>
                     <Timeline
                     activeColor='#555555'

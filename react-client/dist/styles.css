@@ -91,10 +91,7 @@ body{
   height: auto;
 
 }
-.positioning{
-  max-width: inherit;
-  max-height: inherit;
-}
+
 
 header {
   display: block;
