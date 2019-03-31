@@ -147,6 +147,7 @@ img{
 .arrowtop{
   position:fixed;
   bottom: 50px;
+  z-index: 100;
 }
 
 /* Color/shape of burger icon bars */

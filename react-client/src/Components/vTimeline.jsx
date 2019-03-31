@@ -136,25 +136,25 @@ class VTimeline extends Component {
               addEvenPropToChildren= 'true'
               >
                     <div style={sty}>
-                      <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')} width="350" height="175"/>
+                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')} width="350" height="175"/>
                       Adolf Hitler Appointed Chancellor
                       <h4>January 30, 1933</h4>
                       The Nazi Party assumes control of the German state.
                     </div>
                     <div>
-                      <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')} width="350" height="175"/>
+                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')} width="350" height="175"/>
                       Reichstag Fire Decree
                       <h4>FEBRUARY 28, 1933</h4>
                       President Hindenburg suspends constitutional protections in Germany.
                     </div>
                     <div>
-                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')} width="350" height="175"/>
+                    <img class="banner11" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')} width="350" height="175"/>
                     Establishment of Dachau Camp
                     <h4>MARCH 22, 1933</h4>
                     The SS establishes the Dachau concentration camp in March 1933.
                     </div>
                     <div>
-                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.4.jpg')} width="350" height="175"/>
+                    <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.4.jpg')} width="350" height="175"/>
                     Anti-Jewish Boycott
                     <h4>APRIL 1, 1933</h4>
                     Members of the Nazi Party and its affiliated organizations organize a nationwide boycott of Jewish-owned businesses in Germany.
@@ -166,14 +166,14 @@ class VTimeline extends Component {
                     </div>
 
                     <div>
-                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.5.png')} width="350" height="175"/>
+                    <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.5.png')} width="350" height="175"/>
                     Law Limits Jews in Public Schools
                     <h4>APRIL 25, 1933</h4>
                     The Law against Overcrowding in Schools and Universities limits the number of Jewish students in public schools.
                     </div>
 
                     <div>
-                    <img class="banner" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.6.png')} width="350" height="175"/>
+                    <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.6.png')} width="350" height="175"/>
                     Book Burning
                     <h4>MAY 10, 1933</h4>
                     Books deemed "un-German" are publicly burned throughout Germany.

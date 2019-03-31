@@ -38,6 +38,7 @@
   .positioning{
     max-width: inherit;
     max-height: inherit;
+    margin: auto;
   }
   .anchormenu{
     margin: auto;
@@ -47,5 +48,23 @@
     z-index: 100;
     top:0px;
 padding-bottom: 10px;
+  }
+  @media screen and (min-width: 1440px){
+    .anchormenu{
+      margin: auto;
+      max-width: 1000px;
+      position: sticky;
+      position: -webkit-sticky; /* Safari */
+      z-index: 100;
+      top:0px;
+      padding-bottom: 10px;
+    }
+  }
+  .banner1{
+    position: relative;
+    padding:0%;
+    max-width: inherit;
 
+    z-index: 1;
+    overflow: hidden;
   }
