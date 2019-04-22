@@ -52,6 +52,7 @@ const routes = [
     sidebar: () => <div class="head">Timeline</div>,
     main: () =><Route exact path="/timeline" component={VTimeline} />
   }
+
 ];
 class App extends Component {
   showSettings (event) {

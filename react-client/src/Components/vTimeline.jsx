@@ -33,6 +33,7 @@ const list = [
   { name: '1945' }
 ];
 
+
 // One item component
 // selected prop will be passed
 const MenuItem = ({text, selected}) => {
@@ -70,42 +71,34 @@ class VTimeline extends Component {
         super(props);
         // call it again if items count changes
         this.menuItems = Menu(list, selected);
-        this.state = { selected  };
+        this.state = {selected };
 
         this.onSelect = key => {
-                    document.getElementById(key).scrollIntoView(true);
+        document.getElementById(key).scrollIntoView(true);
         this.setState({ selected: key });
         }
+
       }
       goTotop(){
         document.getElementById("top").scrollIntoView(true);
       }
 
+
+
+
+
+
   render() {
-    const { selected } = this.state;
+    const { selected} = this.state;
      // Create menu from items
    const menu = this.menuItems;
-
-
 
     return (
 
       <StyleRoot>
           <div class="positioning" style={pStyle}>
             <h1 id="top">Timeline</h1>
-              {/*<a href='#1933'> 1933 </a>
-              <a href='#1934'> 1934 </a>
-              <a href='#1935'> 1935 </a>
-              <a href='#1936'> 1936 </a>
-              <a href='#1937'> 1937 </a>
-              <a href='#1938'> 1938 </a>
-              <a href='#1939'> 1939 </a>
-              <a href='#1940'> 1940 </a>
-              <a href='#1941'> 1941 </a>
-              <a href='#1942'> 1942 </a>
-              <a href='#1943'> 1943 </a>
-              <a href='#1944'> 1944 </a>
-              <a href='#1945'> 1945 </a> */}
+
               <table class="anchormenu">
               <td class="anchormenu">
             <ScrollMenu
@@ -117,6 +110,7 @@ class VTimeline extends Component {
                   />
                   </td>
             </table>
+
             <img class="arrowtop" src={require('./Pics/top.png')} alt="top" onClick={this.goTotop}/>
                     <Timeline
                     activeColor='#555555'
@@ -136,19 +130,20 @@ class VTimeline extends Component {
               addEvenPropToChildren= 'true'
               >
                     <div style={sty}>
-                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')} width="350" height="175"/>
+                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.1.jpg')}  width="350" height="175"/>
                       <p>Adolf Hitler Appointed Chancellor</p>
+
                       <h4>January 30, 1933</h4>
                       The Nazi Party assumes control of the German state.
                     </div>
                     <div style={sty}>
-                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')} width="350" height="175"/>
+                      <img class="banner1" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.2.jpg')}  width="350" height="175"/>
                       <p>Reichstag Fire Decree</p>
                       <h4>FEBRUARY 28, 1933</h4>
                       President Hindenburg suspends constitutional protections in Germany.
                     </div>
                     <div style={sty}>
-                    <img class="banner11" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')} width="350" height="175"/>
+                    <img class="banner11" src={require('./Pics/6.0-Visual-Timeline/Timeline-lightbox/6.0.3.jpg')}  width="350" height="175"/>
                     <p>Establishment of Dachau Camp</p>
                     <h4>MARCH 22, 1933</h4>
                     The SS establishes the Dachau concentration camp in March 1933.
@@ -690,6 +685,7 @@ class VTimeline extends Component {
                     US President Harry S Truman issues a directive giving preference to displaced persons for immigrant visas under existing US immigration quota restrictions.
                     </div>
                     </Timeline>
+
 
       </div>
        </StyleRoot>
