@@ -34,7 +34,7 @@
   "moment-timezone": "^0.5.23",
   "radium": "^0.25.1",
   "react": "^16.8.3",
-  "react-burger-menu": "https://github.com/KBhandari11/react-burger-menu/tarball/master",
+  "react-burger-menu": "git+https://github.com/KBhandari11/react-burger-menu.git",
   "react-dom": "^16.8.3",
   "react-dual-timeline": "^0.3.0",
   "react-horizontal-scrolling-menu": "https://github.com/KBhandari11/react-horizontal-scrolling-menu/tarball/master",
