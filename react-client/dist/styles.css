@@ -11,16 +11,14 @@ body{
 .Page{
   margin: auto;
   background-color: #545454;
-  max-width: 1440px;
-  height:100%;
+  width: 1440px;
   box-sizing: border-box;
 }
-@media screen and (min-width: 1440px){
+@media (max-width: 1000px){
   .Page{
     margin: auto;
     background-color: #545454;
-    width: 1440px;
-    height:100%;
+    width: 100%;
     box-sizing: border-box;
   }
 }
@@ -139,15 +137,17 @@ img{
   position: absolute;
   max-width: 36px;
   max-height: 30px;
-  left: calc(100vw/2 - 47%);
+  left: calc(100vw/2 - 45%);
   top: 35px;
+
 }
-@media screen and (min-width: 1440px){
+@media  (max-width: 800px){
   .bm-burger-button {
   position: absolute;
-  max-width: 36px;
-  max-height: 30px;
-  left: calc(100vw/2 - (47/100) * 1440px);
+  width: 15px;
+  height: 15px;
+  left: calc(100vw/2 - (47/100) * 100vw);
+  top: 15px;
   }
 }
 .arrowtop{

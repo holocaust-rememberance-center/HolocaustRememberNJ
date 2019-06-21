@@ -79,7 +79,7 @@ class App extends Component {
             ))}
         {this.props.children}
           </div>
-        <div style={{ width: "100%"}}>
+        <div>
             <Footer/>
         </div>
       </div>
