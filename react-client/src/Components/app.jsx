@@ -48,6 +48,14 @@ const routes = [
     main: () =><Route exact path="/bea" component={Bea} />
   },
   {
+    path: "/sinai",
+    sidebar: () => <div class="head">Temple Sinai</div>,
+    main: () =><Route exact path="/sinai" component={() => {
+       window.location.href = 'https://www.templesinainj.org/';
+       return null;
+        }}/>
+  },
+  {
     path: "/timeline",
     sidebar: () => <div class="head">Timeline</div>,
     main: () =><Route exact path="/timeline" component={VTimeline} />

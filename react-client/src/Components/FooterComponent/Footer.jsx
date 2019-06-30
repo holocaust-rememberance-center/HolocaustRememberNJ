@@ -12,8 +12,8 @@ class Footer extends Component {
         <div >
           <table class="footer" style={{width:'inherit'}}>
                 <tr >
-                    <td style={{textAlign:"left", padding:30, color:"white", fontSize:18, padding:30}}>
-                        <p>Contact Us: 208 Summit Ave, Summit, NJ 07901 (908) 273-4921</p>
+                    <td style={{textAlign:"left", color:"white", fontSize:18, padding:30}}>
+                        <p>208 Summit Ave, Summit, NJ 07901 </p>
                         <p>Privacy Policy | Member Terms</p>
                     </td>
                 </tr>

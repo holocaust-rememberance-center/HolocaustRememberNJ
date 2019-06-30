@@ -11,7 +11,7 @@ body{
 .Page{
   margin: auto;
   background-color: #545454;
-  width: 1440px;
+  max-width: 1440px;
   box-sizing: border-box;
 }
 @media (max-width: 1000px){
@@ -94,6 +94,7 @@ body{
   padding:0%;
   max-width: 100%;
   height: auto;
+  bottom:30px;
 }
 
 
@@ -131,30 +132,51 @@ img{
     box-sizing: border-box;
     padding: 0px;
 }
+h1{
+  position:relative;
+  bottom:30px;
+}
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: absolute;
+  position: relative;
   max-width: 36px;
   max-height: 30px;
-  left: calc(100vw/2 - 45%);
-  top: 35px;
+  bottom: 100px;
+  padding: 25px;
 
 }
-@media  (max-width: 800px){
+@media (max-width: 1000px){
   .bm-burger-button {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  left: calc(100vw/2 - (47/100) * 100vw);
-  top: 15px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: calc(100vw/2 - (47/100) * 100vw);
+    top: 15px;
+    padding: 0px;
+  }
+  .collage{
+    position: relative;
+    padding:0%;
+    max-width: 100%;
+    height: auto;
+  }
+  h1{
+    position:inherit;
+    bottom:0px;
   }
 }
+
+
+
+
 .arrowtop{
   position:fixed;
   bottom: 50px;
   z-index: 100;
   cursor: pointer;
+  width: 20px;
+  height:30px;
 }
 
 /* Color/shape of burger icon bars */
