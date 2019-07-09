@@ -97,6 +97,9 @@ class VTimeline extends Component {
 
       <StyleRoot>
           <div class="positioning" style={pStyle}>
+          <div style={{display:"flex", flexDirection:"row", padding:0}}>
+              <div style={{paddingLeft:30, paddingRight:5}}><a id="Home" className="menu-item"><Link to="/" ><img src={require('./Pics/home.png')} alt="Home" style={{width:25, height:25, paddingRight:5}}/> Home</Link></a> > Timeline</div>
+          </div>
             <h1 id="top">Timeline</h1>
 
               <table class="anchormenu">
@@ -111,7 +114,7 @@ class VTimeline extends Component {
                   </td>
             </table>
 
-            <img class="arrowtop" src={require('./Pics/top.png')} alt="top" onClick={this.goTotop}/>
+            <img class="arrowtop" src={require('./Pics/top.png')} alt="gototop" onClick={this.goTotop}/>
                     <Timeline
                     activeColor='#555555'
                     color='#FFF'

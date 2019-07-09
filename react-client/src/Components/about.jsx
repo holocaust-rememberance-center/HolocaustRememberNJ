@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 const pStyle = {
   textAlign: 'justify',
   paddingLeft: 50,
@@ -11,6 +13,9 @@ class About extends Component {
   render() {
     return (
       <div class="positioning" style={pStyle} >
+      <div style={{display:"flex", flexDirection:"row", padding:0}}>
+          <div style={{paddingLeft:30, paddingRight:5}}><a id="Home" className="menu-item"><Link to="/" ><img src={require('./Pics/home.png')} alt="Home" style={{width:25, height:25, paddingRight:5}}/> Home</Link></a> > About</div>
+      </div>
       <h1>About</h1>
 <p>
       On behalf of the Holocaust Remembrance Center Committee, it is our pleasure to welcome you to the Temple Emanu-El Holocaust Remembrance Center (HRC) at Temple Sinai website. This project has been in the works for more than a year and we are proud to share this special dedication site with you.

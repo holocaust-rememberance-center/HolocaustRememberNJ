@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 const pStyle = {
   textAlign: 'justify',
   paddingLeft: 50,
@@ -12,6 +14,9 @@ class Peter extends Component {
   render() {
     return (
       <div style={pStyle} >
+      <div style={{display:"flex", flexDirection:"row", padding:0}}>
+          <div style={{paddingLeft:30, paddingRight:5}}><a id="Home" className="menu-item"><Link to="/" ><img src={require('./Pics/home.png')} alt="Home" style={{width:25, height:25, paddingRight:5}}/> Home</Link></a> > Peter Lederman</div>
+      </div>
       <h1> Peter Lederman Story</h1>
       <p>
       Peter Lederman lived in Gotha, Germany, with his parents and maternal grandmother. Peter’s father, Ernst, owned a successful accounting practice. After Hitler’s rise to power in 1933, Peter, then only 2 years old, experienced increased persecution.

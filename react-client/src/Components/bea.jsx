@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 const pStyle = {
   textAlign: 'justify',
   paddingLeft: 50,
@@ -13,6 +15,9 @@ class Bea extends Component {
   render() {
     return (
       <div style={pStyle} >
+      <div style={{display:"flex", flexDirection:"row", padding:0}}>
+          <div style={{paddingLeft:30, paddingRight:5}}><a id="Home" className="menu-item"><Link to="/" ><img src={require('./Pics/home.png')} alt="Home" style={{width:25, height:25, paddingRight:5}}/> Home</Link></a> > Bea Muhlfelder</div>
+      </div>
       <h1> Bea Muhlfelder Story</h1>
       <p>Bea Muhlfelder was born in Konstanz, a small town on the border between Switzerland and Germany. Bea’s father served as a cantor at the synagogue, across the street from her house. When the temple’s rabbi left for Israel, Bea’s father assumed the rabbi’s responsibilities.
 </p>

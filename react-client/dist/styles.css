@@ -78,7 +78,7 @@ body{
 .banner{
   position: relative;
   padding:0%;
-  max-width: 1440px;
+  max-width: 100%;
   height: auto;
   z-index: 1;
 }
@@ -311,4 +311,8 @@ time {
    overflow: hidden;
    float: none;
 
+}
+a {
+  color: #000;
+  text-decoration: none;
 }

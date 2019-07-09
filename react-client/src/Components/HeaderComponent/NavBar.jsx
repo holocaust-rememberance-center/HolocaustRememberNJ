@@ -21,8 +21,8 @@ class NavBar extends Component {
                           <li><a id="" className="menu-item--small"><Link to="/peter">Peter Lederman</Link></a></li>
                           <li><a id="" className="menu-item--small"><Link to="/bea">Bea Muhlfelder</Link></a></li>
                     </ul>
-              <a id="" className="menu-item"><Link to="/sinai"> Temple Sinai</Link></a>
               <a id="" className="menu-item"><Link to="/timeline"> Timeline</Link></a>
+              <a id="" className="menu-item"><Link to="/sinai" target="_blank"> Temple Sinai</Link></a>
 
             </Menu>
             </div>
