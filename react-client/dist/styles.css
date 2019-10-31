@@ -141,7 +141,7 @@ h1{
 .bm-burger-button {
   position: relative;
   max-width: 36px;
-  max-height: 30px;
+  height: 30px;
   bottom: 100px;
   padding: 25px;
 
